@@ -16,7 +16,7 @@ app.post('/convert', async function (req, res, next) {
     let serviceInfo = null;
     try {
       const url =  new URL(endpointConfig?.production_endpoints?.url || 'http://dummy.com');
-      const gkeList = ['.api.devgcp.', '.adapter.api.gcp.', '.gcp.intra.', '.anthosdev.intra.', '.anthos.intra.'];
+      const gkeList = ['.api.devgcp.', '.adapter.api.gcp.', '.gcp.intra.', '.anthosdev.intra.', '.anthos.intra.', '.api.aws.', '.api.devaws.'];
       for(p of gkeList) {
         const serviceNames = url.hostname.split(p);
         if (serviceNames.length > 1) {
